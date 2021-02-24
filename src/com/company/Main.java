@@ -1,12 +1,16 @@
 package com.company;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Main {
 
     public static void main(String[] args) {
-        int age = 20;
-        int temperature = 30;
-
-        System.out.println(addition(age, temperature));
+        System.out.println(addition(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(addition(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(addition(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(addition(generateRandomAge(), generateRandomTemperature()));
+        System.out.println(addition(generateRandomAge(), generateRandomTemperature()));
     }
 
     public static String addition(int age, int temperature) {
@@ -19,9 +23,16 @@ public class Main {
         } else {
             return "Оставайтесь дома";
         }
+    }
 
+    public static int generateRandomAge(){
+       // return ThreadLocalRandom.current().nextInt(0, 75);
+        ///return (int) (Math.random() * 75);
+        return new Random().nextInt(75);
+    }
 
-
+    public static int generateRandomTemperature(){
+        return ThreadLocalRandom.current().nextInt(-50, 75);
     }
 
 }
