@@ -19,6 +19,9 @@ public class Main {
         } else {
             return "Оставайтесь дома";
         }
+
+
+
     }
 
 }
